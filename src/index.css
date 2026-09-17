@@ -1,0 +1,89 @@
+:root {
+  /* Dark Theme Palette (Default) */
+  --bg-deep: #030712;
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --bg-card-hover: rgba(30, 41, 59, 0.85);
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --accent-glow: rgba(16, 185, 129, 0.28);
+  --accent-border: rgba(16, 185, 129, 0.5);
+  --card-spotlight: radial-gradient(circle closest-side, rgba(16, 185, 129, 0.22), transparent);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-active: rgba(255, 255, 255, 0.2);
+  --nav-bg: rgba(3, 7, 18, 0.88);
+  --tag-bg: rgba(255, 255, 255, 0.05);
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Light Theme Palette */
+[data-theme="light"] {
+  --bg-deep: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --accent: #047857;
+  --accent-light: #059669;
+  --accent-glow: rgba(4, 120, 87, 0.08);
+  --accent-border: rgba(4, 120, 87, 0.35);
+  --card-spotlight: radial-gradient(circle closest-side, rgba(16, 185, 129, 0.12), transparent);
+  --text-main: #0f172a;
+  --text-muted: #334155;
+  --text-dim: #64748b;
+  --border: rgba(15, 23, 42, 0.12);
+  --border-active: rgba(15, 23, 42, 0.25);
+  --nav-bg: rgba(241, 245, 249, 0.92);
+  --tag-bg: rgba(15, 23, 42, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dynamic Particle Background */
+#particlesCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Desktop Spotlight Glow */
+.cursor-spotlight {
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(60px);
+  z-index: -1;
+  transition: transform 0.08s ease-out, background 0.3s ease;
+}
